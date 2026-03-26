@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Beauty Expert Palette — OKLCH */
+    /* Cream page background: #F6EFE6 */
+    --background: 0.952 0.018 75;
+    /* Deep warm brown headline: #1F1A17 */
+    --foreground: 0.185 0.018 42;
+    /* Card blush: #F0DDD9 */
+    --card: 0.918 0.028 22;
+    --card-foreground: 0.185 0.018 42;
+    --popover: 0.952 0.018 75;
+    --popover-foreground: 0.185 0.018 42;
+    /* Rose-mauve primary: #C58E8A */
+    --primary: 0.648 0.082 18;
+    --primary-foreground: 0.985 0.005 75;
+    /* Blush secondary: #E7C3BF */
+    --secondary: 0.876 0.042 18;
+    --secondary-foreground: 0.185 0.018 42;
+    /* Muted cream */
+    --muted: 0.938 0.015 60;
+    --muted-foreground: 0.52 0.032 42;
+    /* Gold accent: #C9A46A */
+    --accent: 0.738 0.092 72;
+    --accent-foreground: 0.185 0.018 42;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    /* Subtle warm border: #E7D6CF */
+    --border: 0.898 0.025 35;
+    --input: 0.898 0.025 35;
+    --ring: 0.648 0.082 18;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+
+    /* Custom design tokens */
+    --gold: oklch(0.738 0.092 72);
+    --gold-deep: oklch(0.65 0.09 68);
+    --blush: oklch(0.876 0.042 18);
+    --blush-deep: oklch(0.78 0.065 18);
+    --cream: oklch(0.952 0.018 75);
+    --cream-dark: oklch(0.918 0.028 22);
+    --rose: oklch(0.648 0.082 18);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: "Playfair Display", serif;
+  }
+  .font-inter {
+    font-family: "Inter", sans-serif;
+  }
+  .text-gold {
+    color: var(--gold);
+  }
+  .bg-gold {
+    background-color: var(--gold);
+  }
+  .border-gold {
+    border-color: var(--gold);
+  }
+  .gold-divider {
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--gold),
+      var(--gold-deep),
+      transparent
+    );
+  }
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.965 0.018 75) 0%,
+      oklch(0.935 0.032 30) 50%,
+      oklch(0.915 0.042 20) 100%
+    );
+  }
+  .section-heading {
+    @apply font-playfair text-3xl md:text-4xl font-bold tracking-widest uppercase text-center;
+    color: oklch(0.185 0.018 42);
+  }
+  .section-subheading {
+    @apply text-center font-inter text-sm tracking-widest uppercase;
+    color: var(--gold);
+  }
+  .gold-line {
+    @apply mx-auto mt-3 mb-8;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .service-card {
+    background: oklch(0.955 0.022 30);
+    border: 1px solid oklch(0.898 0.025 35);
+    box-shadow: 0 4px 20px rgba(60, 40, 35, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(60, 40, 35, 0.14);
+  }
+  .testimonial-card {
+    background: oklch(0.938 0.028 22);
+    border: 1px solid oklch(0.898 0.025 35);
+    box-shadow: 0 2px 12px rgba(60, 40, 35, 0.08);
+  }
+  .whatsapp-btn {
+    background: #25d366;
+    color: white;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .whatsapp-btn:hover {
+    background: #1da851;
+    transform: translateY(-1px);
+  }
+}
