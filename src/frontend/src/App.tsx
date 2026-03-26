@@ -300,12 +300,14 @@ function HeroSection() {
       className="relative overflow-hidden hero-gradient"
       style={{ minHeight: "90vh" }}
     >
-      {/* Faint floral background pattern */}
+      {/* Hero background image */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-5"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='6' stroke='%23C9A46A' stroke-width='1.5'/%3E%3Cellipse cx='40' cy='22' rx='5' ry='9' stroke='%23C9A46A' stroke-width='1'/%3E%3Cellipse cx='40' cy='58' rx='5' ry='9' stroke='%23C9A46A' stroke-width='1'/%3E%3Cellipse cx='22' cy='40' rx='9' ry='5' stroke='%23C9A46A' stroke-width='1'/%3E%3Cellipse cx='58' cy='40' rx='9' ry='5' stroke='%23C9A46A' stroke-width='1'/%3E%3C/svg%3E")`,
-          backgroundRepeat: "repeat",
+          backgroundImage: `url('/assets/generated/hero-bg.dim_1920x1080.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.25,
         }}
       />
 
